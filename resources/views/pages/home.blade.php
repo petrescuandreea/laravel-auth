@@ -1,6 +1,13 @@
 @extends('layouts.main-layout')
 @section('content')
 
+    @auth
+        <h1>{{ Auth::user() -> name }}</h1>
+        <a href="{{ route('logout') }}">LOGOUT</a>
+    @else
+        <h1>If you wanna see my site you have to login/register</h1>
+    @endauth
+
     <section id="registration">
         <h2>Registration</h2>
 
@@ -28,7 +35,7 @@
     </section>
 
     <hr>
-    
+
     <section id="log-in">
         <h2>Login</h2>
 
